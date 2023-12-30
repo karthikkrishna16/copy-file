@@ -37,65 +37,72 @@ count=0
 
 with open(sys.argv[1],'r') as f:
 
-    for line in f:
-    
-        word=line.split()
+        for line in f:
         
-        count+=len(word)
+            word=line.split()
+            
+            count+=len(word)
+
 print("Word Count in File=",count)
 
 from shutil import copyfile
 
 from sys import exit
 
+
 source = input("Enter source file with full path: ")
 
 target = input("Enter target file with full path: ")
 
-adding exception handling
+# adding exception handling
+
 try:
 
-copyfile(source, target)
+    copyfile(source, target)
+
 except IOError as e:
 
-print("Unable to copy file. %s" % e)
+    print("Unable to copy file. %s" % e)
+    
+    exit(1)
 
-exit(1)
 except:
 
-print("Unexpected error:", sys.exc_info())
+    print("Unexpected error:", sys.exc_info())
+    
+    exit(1)
 
-exit(1)
+
 print("\nFile copy done!\n")
+
 
 while True:
 
-print("Do you like to print the file ? (y/n): ")
-
-check = input()
-
-if check == 'n':
-
-    break
-
-elif check == 'y':
-
-    file = open(target, "r")
+    print("Do you like to print the file ? (y/n): ")
     
-    print("\nHere follows the file content:\n")
+    check = input()
     
-    print(file.read())
+    if check == 'n':
     
-    file.close()
+        break
     
-    print()
+    elif check == 'y':
     
-    break
-
-else:
-   
-    continue
-
+        file = open(target, "r")
+        
+        print("\nHere follows the file content:\n")
+        
+        print(file.read())
+        
+        file.close()
+        
+        print()
+        
+        break
+    
+    else:
+       
+        continue
 
 ### OUTPUT:
 ![screenshot2](https://github.com/anushanirudh/copy-file/assets/151725737/071b7a3c-6c35-4948-8322-08df792d04ed)
