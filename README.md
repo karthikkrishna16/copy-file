@@ -74,7 +74,7 @@ exit(1)
 print("\nFile copy done!\n")
 
 while True:
-
+```
 print("Do you like to print the file ? (y/n): ")
 
 check = input()
@@ -86,7 +86,7 @@ if check == 'n':
 elif check == 'y':
 
     file = open(target, "r")
-```    
+  
     print("\nHere follows the file content:\n")
     
     print(file.read())
