@@ -31,19 +31,17 @@ Getting statement from the user to print or not want to print
 ## PROGRAM:
 #Developed by : TH KARTHIK KRISHNA 
 #Reg no : 23014165
-
 import sys
 
 count=0
 
 with open(sys.argv[1],'r') as f:
-```
+
     for line in f:
     
         word=line.split()
         
         count+=len(word)
-```
 print("Word Count in File=",count)
 
 from shutil import copyfile
@@ -54,18 +52,15 @@ source = input("Enter source file with full path: ")
 
 target = input("Enter target file with full path: ")
 
-###adding exception handling
+adding exception handling
 try:
-```
+
 copyfile(source, target)
-```
 except IOError as e:
-```
+
 print("Unable to copy file. %s" % e)
 
 exit(1)
-
-```
 except:
 
 print("Unexpected error:", sys.exc_info())
@@ -74,7 +69,7 @@ exit(1)
 print("\nFile copy done!\n")
 
 while True:
-```
+
 print("Do you like to print the file ? (y/n): ")
 
 check = input()
@@ -86,7 +81,7 @@ if check == 'n':
 elif check == 'y':
 
     file = open(target, "r")
-  
+    
     print("\nHere follows the file content:\n")
     
     print(file.read())
@@ -100,7 +95,6 @@ elif check == 'y':
 else:
    
     continue
-```
 
 
 ### OUTPUT:
