@@ -31,6 +31,7 @@ Getting statement from the user to print or not want to print
 ## PROGRAM:
 #Developed by : TH KARTHIK KRISHNA 
 #Reg no : 23014165
+```
 import sys
 
 count=0
@@ -53,9 +54,10 @@ from sys import exit
 source = input("Enter source file with full path: ")
 
 target = input("Enter target file with full path: ")
+```
 
 # adding exception handling
-
+```
 try:
 
     copyfile(source, target)
@@ -103,7 +105,7 @@ while True:
     else:
        
         continue
-
+```
 ### OUTPUT:
 ![screenshot2](https://github.com/anushanirudh/copy-file/assets/151725737/071b7a3c-6c35-4948-8322-08df792d04ed)
 
